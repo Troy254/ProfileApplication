@@ -24,8 +24,7 @@ public class ProfileController {
   }
 
   @GetMapping("/users")
-  public List<AppUsers> findAllUsers() {
-    return usersRepository.findAll();
+  public List<AppUsers> findAllUsers() { return usersRepository.findAll();
   }
 
   @PostMapping("/user")
@@ -39,6 +38,5 @@ public class ProfileController {
     appUsers.setRegisteredSince(LocalDate.now());
     usersRepository.save(appUsers);
   }
-
 
 }
