@@ -3,7 +3,6 @@ package com.peerlender.profile.application;
 import com.peerlender.profile.domain.model.AppUsers;
 import com.peerlender.profile.domain.repository.UsersRepository;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -25,19 +24,19 @@ public class ProfileController {
   }
 
   @GetMapping("/users")
-  public List<AppUsers> findAllUsers() { return usersRepository.findAll();
+  public List<AppUsers> findAllUsers() {
+    return usersRepository.findAll();
   }
 
   @PostMapping("/user")
   public void newUser(@RequestBody AppUsers appUsers) {
-   appUsers.setRegisteredSince(LocalDate.now());
+    //appUsers.setRegisteredSince(LocalDate.now());
     usersRepository.save(appUsers);
   }
 
   @PutMapping("/user")
   public void updateUser(@RequestBody AppUsers appUsers) {
-   appUsers.setRegisteredSince(LocalDate.now());
+   // appUsers.setRegisteredSince(LocalDate.now());
     usersRepository.save(appUsers);
   }
-
 }
