@@ -15,7 +15,7 @@ import org.springframework.context.annotation.Configuration;
 public class MessagingConfig {
 
   private static final String TOPIC = "userRegisteredTopic";
-  private static final String QUEUE_NAME = "user.registered";
+  private static final String QUEUE_NAME = "user.registered.lending";
 
   @Bean
   public Queue userRegisteredQueue() {
@@ -37,11 +37,11 @@ public class MessagingConfig {
   //add Listeners
   @Bean
   public SimpleMessageListenerContainer container(ConnectionFactory connectionFactory,
-      MessageListenerAdapter mesageListenerAdapter) {
+      MessageListenerAdapter messageListenerAdapter) {
     SimpleMessageListenerContainer container = new SimpleMessageListenerContainer();
     container.setConnectionFactory(connectionFactory);
     container.setQueueNames(QUEUE_NAME);
-    container.setMessageListener(mesageListenerAdapter);
+    container.setMessageListener(messageListenerAdapter);
     return container;
   }
 
@@ -50,4 +50,5 @@ public class MessagingConfig {
       UserRegisteredEventHandler userRegisteredEventHandler) {
     return new MessageListenerAdapter(userRegisteredEventHandler, "handleUserRegistration");
   }
+
 }

@@ -14,16 +14,16 @@ public class UserRegisteredEventHandler {
   private Logger LOGGER = LoggerFactory.getLogger(UserRegisteredEventHandler.class);
 
   private static final Gson GSON = new Gson();
-  private UsersRepository userRepository;
+  private UsersRepository usersRepository;
 
   @Autowired
-  public UserRegisteredEventHandler(UsersRepository userRepository){
-    this.userRepository = userRepository;
+  public UserRegisteredEventHandler(UsersRepository usersRepository){
+    this.usersRepository = usersRepository;
   }
 
   public void handleUserRegistration(String userDetails){
     AppUsers appUsers = GSON.fromJson(userDetails, AppUsers.class);
     LOGGER.info("user {} registered", appUsers.getUsername());
-    userRepository.save(appUsers);
+    usersRepository.save(appUsers);
   }
 }

@@ -20,6 +20,5 @@ public class AppUsers {
   private int age;
   private String occupation;
   private LocalDate registeredSince;
-
 }
 

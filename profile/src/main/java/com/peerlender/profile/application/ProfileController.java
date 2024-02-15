@@ -3,6 +3,7 @@ package com.peerlender.profile.application;
 import com.peerlender.profile.domain.model.AppUsers;
 import com.peerlender.profile.domain.repository.UsersRepository;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
