@@ -30,13 +30,13 @@ public class ProfileController {
 
   @PostMapping("/user")
   public void newUser(@RequestBody AppUsers appUsers) {
-    //appUsers.setRegisteredSince(LocalDate.now());
+    appUsers.setRegisteredSince(LocalDate.now());
     usersRepository.save(appUsers);
   }
 
   @PutMapping("/user")
   public void updateUser(@RequestBody AppUsers appUsers) {
-   // appUsers.setRegisteredSince(LocalDate.now());
+   appUsers.setRegisteredSince(LocalDate.now());
     usersRepository.save(appUsers);
   }
 }
