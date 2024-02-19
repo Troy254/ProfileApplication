@@ -19,6 +19,6 @@ public class AppUsers {
   private String lastName;
   private int age;
   private String occupation;
-  private LocalDate registeredSince;
+  private String registeredSince;
 }
 

@@ -23,7 +23,7 @@ public class UserRegisteredEventHandler {
 
 
   public void handleUserRegistration(String userDetails) {
-    AppUsers appUsers = GSON.fromJson(userDetails, AppUsers.class);
+    AppUsers  appUsers = GSON.fromJson(userDetails, AppUsers.class);
     LOGGER.info("user {} registered", appUsers.getUsername());
     usersRepository.save(appUsers);
   }

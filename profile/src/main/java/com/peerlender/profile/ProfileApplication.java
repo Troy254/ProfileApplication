@@ -2,7 +2,6 @@ package com.peerlender.profile;
 
 import com.peerlender.profile.domain.model.AppUsers;
 import com.peerlender.profile.domain.repository.UsersRepository;
-import java.time.LocalDate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -19,6 +18,6 @@ public class ProfileApplication implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 		usersRepository.save(new AppUsers("John","John","Sane",
-				32,"software engineer",LocalDate.now()));
+				32,"software engineer","2024-02-19"));
 	}
 }
