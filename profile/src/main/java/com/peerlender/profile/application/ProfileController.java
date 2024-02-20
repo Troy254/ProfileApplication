@@ -35,7 +35,7 @@ public class ProfileController {
   }
 
   @PutMapping("/user")
-  public void updateUser(@RequestBody AppUsers appUsers) {
+  public void updateUser(@RequestBody AppUsers appUsers){
     appUsers.setRegisteredSince(String.valueOf(LocalDate.now()));
     usersRepository.save(appUsers);
   }
