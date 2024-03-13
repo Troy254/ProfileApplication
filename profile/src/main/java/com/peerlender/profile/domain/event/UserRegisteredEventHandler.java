@@ -26,5 +26,4 @@ public class UserRegisteredEventHandler {
     LOGGER.info("user {} registered", appUsers.getUsername());
     usersRepository.save(appUsers);
   }
-
 }
